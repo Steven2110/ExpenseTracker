@@ -41,7 +41,7 @@ struct MainView: View {
                                     Text(getDateFormatted(from: expense.date)).font(.caption)
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                Text("$ \(expense.amount, specifier: "%.2f")")
+                                Text("\(expense.amount.currency)")
                             }.padding(.horizontal, 10)
                         }
                     }.padding(.horizontal)
@@ -89,7 +89,7 @@ extension MainView {
                     GeometryReader { geo in
                         let rect = geo.frame(in: .global)
                         HStack {
-                            Text("$ 3,000.00")
+                            Text("\(expenses.map( { $0.amount }).reduce(0, +).currency)")
                                 .font(.largeTitle)
                                 .bold()
                             Image(systemName: "triangle.fill")

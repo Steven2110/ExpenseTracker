@@ -16,6 +16,7 @@
 		B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B02A96448100CE5DCF /* Color+Ext.swift */; };
 		B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */; };
 		B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B52A96E0D900CE5DCF /* Expense.swift */; };
+		B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		B05A83B02A96448100CE5DCF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
 		B05A83B52A96E0D900CE5DCF /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				B05A83B02A96448100CE5DCF /* Color+Ext.swift */,
+				B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -180,6 +183,7 @@
 			files = (
 				B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */,
 				B05A839F2A960BEF00CE5DCF /* MainView.swift in Sources */,
+				B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,
 				B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */,
