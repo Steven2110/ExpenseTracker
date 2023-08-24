@@ -14,6 +14,7 @@
 		B05A83AB2A960C2100CE5DCF /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = B05A83AA2A960C2100CE5DCF /* README.md */; };
 		B05A83AD2A960C4D00CE5DCF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B05A83AC2A960C4D00CE5DCF /* .gitignore */; };
 		B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B02A96448100CE5DCF /* Color+Ext.swift */; };
+		B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		B05A83AA2A960C2100CE5DCF /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		B05A83AC2A960C4D00CE5DCF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B05A83B02A96448100CE5DCF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
+		B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				B05A83AF2A96435E00CE5DCF /* Extension */,
+				B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */,
 				B05A839F2A960BEF00CE5DCF /* MainView.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,

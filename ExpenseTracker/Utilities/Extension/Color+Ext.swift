@@ -15,4 +15,5 @@ extension Color {
     static let secondaryAccent = Color("secondaryAccent")
     static let buttonColor = Color("buttonColor")
     static let linkColor = Color("linkColor")
+    static let orchid = Color("orchid")
 }
