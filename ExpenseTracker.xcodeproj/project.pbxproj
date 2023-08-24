@@ -15,6 +15,7 @@
 		B05A83AD2A960C4D00CE5DCF /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = B05A83AC2A960C4D00CE5DCF /* .gitignore */; };
 		B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B02A96448100CE5DCF /* Color+Ext.swift */; };
 		B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */; };
+		B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B52A96E0D900CE5DCF /* Expense.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		B05A83AC2A960C4D00CE5DCF /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		B05A83B02A96448100CE5DCF /* Color+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Ext.swift"; sourceTree = "<group>"; };
 		B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
+		B05A83B52A96E0D900CE5DCF /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				B05A839C2A960BEF00CE5DCF /* ExpenseTrackerApp.swift */,
 				B05A83AE2A96435700CE5DCF /* Utilities */,
+				B05A83B42A96E0C900CE5DCF /* Models */,
 				B05A839E2A960BEF00CE5DCF /* MainView.swift */,
 				B05A83A02A960BF000CE5DCF /* Assets.xcassets */,
 				B05A83A22A960BF000CE5DCF /* Preview Content */,
@@ -93,6 +96,14 @@
 				B05A83B02A96448100CE5DCF /* Color+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		B05A83B42A96E0C900CE5DCF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B05A83B52A96E0D900CE5DCF /* Expense.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,6 +182,7 @@
 				B05A839F2A960BEF00CE5DCF /* MainView.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,
+				B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

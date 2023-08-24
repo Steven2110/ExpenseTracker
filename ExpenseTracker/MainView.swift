@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @State private var expenses: [Expense] = Expense.sampleData
+    
     @State private var offsetY: CGFloat = 0
     var body: some View {
         GeometryReader { geo in
@@ -17,29 +19,29 @@ struct MainView: View {
                 VStack {
                     HeaderView(size: size, safeArea: safeArea)
                         .zIndex(1)
-                    ForEach(0..<50) { _ in
+                    ForEach(expenses) { expense in
                         ZStack {
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
                                 .fill(Color.primaryAccent.opacity(0.5))
                                 .frame(height: 100)
                             HStack {
-                                Image(systemName: "airplane")
+                                Image(systemName: expense.icon)
                                     .resizable()
                                     .scaledToFit()
-                                    .frame(width: 30)
-                                    .rotationEffect(Angle(degrees: -45))
+                                    .frame(width: 20)
+                                    .rotationEffect(expense.icon == "airplane" ? Angle(degrees: -45) : Angle(degrees: 0))
                                     .padding()
                                     .foregroundColor(.yellow)
                                     .background(Color.gray.opacity(0.4))
                                     .clipShape(Circle())
                                 VStack(alignment: .leading, spacing: 10) {
-                                    Text("Fly to Paris")
+                                    Text(expense.name)
                                         .lineLimit(1)
                                         .minimumScaleFactor(0.7)
-                                    Text(getDateFormatted(from: Date())).font(.caption)
+                                    Text(getDateFormatted(from: expense.date)).font(.caption)
                                 }
                                 .frame(maxWidth: .infinity, alignment: .leading)
-                                Text("$1,300.00")
+                                Text("$ \(expense.amount, specifier: "%.2f")")
                             }.padding(.horizontal, 10)
                         }
                     }.padding(.horizontal)
