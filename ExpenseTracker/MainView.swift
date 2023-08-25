@@ -20,30 +20,7 @@ struct MainView: View {
                     HeaderView(size: size, safeArea: safeArea)
                         .zIndex(1)
                     ForEach(expenses) { expense in
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(Color.brandPrimary)
-                                .frame(height: 100)
-                            HStack {
-                                Image(systemName: expense.category.categoryIcon)
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .rotationEffect(expense.category.categoryIcon == "airplane" ? Angle(degrees: -45) : Angle(degrees: 0))
-                                    .padding()
-                                    .foregroundColor(Color.primaryAccent)
-                                    .background(Color.gray.opacity(0.4))
-                                    .clipShape(Circle())
-                                VStack(alignment: .leading, spacing: 10) {
-                                    Text(expense.name)
-                                        .lineLimit(1)
-                                        .minimumScaleFactor(0.7)
-                                    Text(getDateFormatted(from: expense.date)).font(.caption)
-                                }
-                                .frame(maxWidth: .infinity, alignment: .leading)
-                                Text("\(expense.amount.currency)")
-                            }.padding(.horizontal, 10)
-                        }
+                        ExpenseRowView(expense: expense)
                     }.padding(.horizontal)
                 }
                 .background {
@@ -54,13 +31,6 @@ struct MainView: View {
                 }
             }.ignoresSafeArea(edges: .top)
         }
-    }
-    
-    func getDateFormatted(from date: Date) -> String {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "dd MMMM 'at' HH:mm"
-        
-        return dateFormatter.string(from: date)
     }
 }
 

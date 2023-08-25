@@ -23,6 +23,8 @@
 		B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83BF2A99157900CE5DCF /* View+Ext.swift */; };
 		B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */; };
 		B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C32A991B0400CE5DCF /* CategoryView.swift */; };
+		B05A83C62A99269B00CE5DCF /* ExpenseRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C52A99269B00CE5DCF /* ExpenseRowView.swift */; };
+		B05A83C82A9926D000CE5DCF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C72A9926D000CE5DCF /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		B05A83BF2A99157900CE5DCF /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
 		B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
 		B05A83C32A991B0400CE5DCF /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
+		B05A83C52A99269B00CE5DCF /* ExpenseRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseRowView.swift; sourceTree = "<group>"; };
+		B05A83C72A9926D000CE5DCF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 				B05A83AE2A96435700CE5DCF /* Utilities */,
 				B05A83B42A96E0C900CE5DCF /* Models */,
 				B05A839E2A960BEF00CE5DCF /* MainView.swift */,
+				B05A83C52A99269B00CE5DCF /* ExpenseRowView.swift */,
 				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
 				B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */,
@@ -104,6 +109,7 @@
 			children = (
 				B05A83AF2A96435E00CE5DCF /* Extension */,
 				B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */,
+				B05A83C72A9926D000CE5DCF /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -201,11 +207,13 @@
 			files = (
 				B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */,
 				B05A839F2A960BEF00CE5DCF /* MainView.swift in Sources */,
+				B05A83C82A9926D000CE5DCF /* Utilities.swift in Sources */,
 				B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */,
 				B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */,
 				B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */,
 				B05A83BA2A96EE3300CE5DCF /* ETTabView.swift in Sources */,
 				B05A83BC2A96F2CD00CE5DCF /* AddExpenseForm.swift in Sources */,
+				B05A83C62A99269B00CE5DCF /* ExpenseRowView.swift in Sources */,
 				B05A83BE2A96FB5300CE5DCF /* Category.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */,
