@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct ETTabView: View {
+    @State private var expenses: [Expense] = Expense.sampleData
     var body: some View {
         TabView {
             Group {
-                MainView()
+                MainView(expenses: expenses)
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
                 NavigationStack {
-                    AddExpenseForm()
+                    AddExpenseForm(expenses: $expenses)
                         .navigationTitle("Add New Expense")
                 }
                 .tabItem {

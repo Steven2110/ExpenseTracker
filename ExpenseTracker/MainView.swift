@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State private var expenses: [Expense] = Expense.sampleData
+    var expenses: [Expense]
     
     @State private var offsetY: CGFloat = 0
     var body: some View {
@@ -66,7 +66,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView()
+        MainView(expenses: Expense.sampleData)
     }
 }
 

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AddExpenseForm: View {
+    @Binding var expenses: [Expense]
     
     @State private var name: String = ""
     @State private var category: Category = Category.food
@@ -54,7 +55,7 @@ struct AddExpenseForm: View {
                     
                     let expense = Expense(name: name, category: category, date: transactionDate, amount: amount)
                     
-                    print(expense)
+                    expenses.append(expense)
                 }
             }
         }
@@ -73,7 +74,7 @@ struct AddExpenseForm: View {
 struct AddExpenseForm_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            AddExpenseForm()
+            AddExpenseForm(expenses: .constant(Expense.sampleData))
         }
     }
 }
