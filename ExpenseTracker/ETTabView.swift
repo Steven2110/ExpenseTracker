@@ -15,13 +15,16 @@ struct ETTabView: View {
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
-                Text("Add Expense View")
+                NavigationStack {
+                    AddExpenseForm()
+                        .navigationTitle("Add New Expense")
+                }
                 .tabItem {
                     Label("Add Expense", systemImage: "plus.circle")
                 }
             }
             .toolbar(.visible, for: .tabBar)
-        }
+        }.tint(.primaryAccent)
     }
 }
 
