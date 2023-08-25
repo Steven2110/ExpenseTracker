@@ -22,16 +22,16 @@ struct MainView: View {
                     ForEach(expenses) { expense in
                         ZStack {
                             RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                .fill(Color.primaryAccent.opacity(0.5))
+                                .fill(Color.brandPrimary)
                                 .frame(height: 100)
                             HStack {
-                                Image(systemName: expense.icon)
+                                Image(systemName: expense.category.categoryIcon)
                                     .resizable()
                                     .scaledToFit()
                                     .frame(width: 20)
-                                    .rotationEffect(expense.icon == "airplane" ? Angle(degrees: -45) : Angle(degrees: 0))
+                                    .rotationEffect(expense.category.categoryIcon == "airplane" ? Angle(degrees: -45) : Angle(degrees: 0))
                                     .padding()
-                                    .foregroundColor(.yellow)
+                                    .foregroundColor(Color.primaryAccent)
                                     .background(Color.gray.opacity(0.4))
                                     .clipShape(Circle())
                                 VStack(alignment: .leading, spacing: 10) {

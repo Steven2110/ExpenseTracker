@@ -17,6 +17,12 @@
 		B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */; };
 		B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B52A96E0D900CE5DCF /* Expense.swift */; };
 		B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */; };
+		B05A83BA2A96EE3300CE5DCF /* ETTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83B92A96EE3300CE5DCF /* ETTabView.swift */; };
+		B05A83BC2A96F2CD00CE5DCF /* AddExpenseForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */; };
+		B05A83BE2A96FB5300CE5DCF /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83BD2A96FB5300CE5DCF /* Category.swift */; };
+		B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83BF2A99157900CE5DCF /* View+Ext.swift */; };
+		B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */; };
+		B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C32A991B0400CE5DCF /* CategoryView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,12 @@
 		B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollDetector.swift; sourceTree = "<group>"; };
 		B05A83B52A96E0D900CE5DCF /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
 		B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Ext.swift"; sourceTree = "<group>"; };
+		B05A83B92A96EE3300CE5DCF /* ETTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ETTabView.swift; sourceTree = "<group>"; };
+		B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddExpenseForm.swift; sourceTree = "<group>"; };
+		B05A83BD2A96FB5300CE5DCF /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		B05A83BF2A99157900CE5DCF /* View+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Ext.swift"; sourceTree = "<group>"; };
+		B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPicker.swift; sourceTree = "<group>"; };
+		B05A83C32A991B0400CE5DCF /* CategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +81,10 @@
 				B05A83AE2A96435700CE5DCF /* Utilities */,
 				B05A83B42A96E0C900CE5DCF /* Models */,
 				B05A839E2A960BEF00CE5DCF /* MainView.swift */,
+				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
+				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
+				B05A83C12A991AA700CE5DCF /* CategoryPicker.swift */,
+				B05A83C32A991B0400CE5DCF /* CategoryView.swift */,
 				B05A83A02A960BF000CE5DCF /* Assets.xcassets */,
 				B05A83A22A960BF000CE5DCF /* Preview Content */,
 			);
@@ -97,6 +113,7 @@
 			children = (
 				B05A83B02A96448100CE5DCF /* Color+Ext.swift */,
 				B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */,
+				B05A83BF2A99157900CE5DCF /* View+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -105,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				B05A83B52A96E0D900CE5DCF /* Expense.swift */,
+				B05A83BD2A96FB5300CE5DCF /* Category.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,8 +201,14 @@
 			files = (
 				B05A83B32A96C3EB00CE5DCF /* ScrollDetector.swift in Sources */,
 				B05A839F2A960BEF00CE5DCF /* MainView.swift in Sources */,
+				B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */,
+				B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */,
 				B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */,
+				B05A83BA2A96EE3300CE5DCF /* ETTabView.swift in Sources */,
+				B05A83BC2A96F2CD00CE5DCF /* AddExpenseForm.swift in Sources */,
+				B05A83BE2A96FB5300CE5DCF /* Category.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
+				B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,
 				B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */,
 			);
@@ -323,6 +347,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -352,6 +377,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
