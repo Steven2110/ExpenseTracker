@@ -12,6 +12,7 @@ struct Category: Identifiable, Hashable {
     var categoryName: String
     var categoryIcon: String
     
+    static let all: Category = Category(categoryName: "All", categoryIcon: "")
     static let food: Category = Category(categoryName: "Food", categoryIcon: "fork.knife")
     static let transportation: Category = Category(categoryName: "Transportation", categoryIcon: "car")
     static let travel: Category = Category(categoryName: "Travel", categoryIcon: "airplane")
@@ -21,6 +22,16 @@ struct Category: Identifiable, Hashable {
     static let education: Category = Category(categoryName: "Education", categoryIcon: "graduationcap.fill")
     
     static let defaultCategories: [Category] = [
+        Category.food,
+        Category.transportation,
+        Category.travel,
+        Category.internet,
+        Category.entertainment,
+        Category.development,
+        Category.education
+    ]
+    static let categoriesFilter: [Category] = [
+        Category.all,
         Category.food,
         Category.transportation,
         Category.travel,

@@ -15,11 +15,11 @@ struct Expense: Identifiable {
     var amount: Double
     
     static var sampleData: [Expense] = [
-        .init(name: "Fly to Paris", category: Category.travel, date: Date(), amount: 1300.00),
-        .init(name: "Internet", category: Category.internet, date: Date(), amount: 70.0),
-        .init(name: "Apple Developer Program", category: Category.development, date: Date(), amount: 99.00),
-        .init(name: "Apple Music Subscription", category: Category.entertainment, date: Date(), amount: 35.0),
-        .init(name: "Tuition Fee", category: Category.education, date: Date(), amount: 1496),
+        .init(name: "Fly to Paris", category: Category.travel, date: getDateFromStr("12.08.23"), amount: 1300.00),
+        .init(name: "Internet", category: Category.internet, date: getDateFromStr("14.08.23"), amount: 70.0),
+        .init(name: "Apple Developer Program", category: Category.development, date: getDateFromStr("14.08.23"), amount: 99.00),
+        .init(name: "Apple Music Subscription", category: Category.entertainment, date: getDateFromStr("14.08.23"), amount: 35.0),
+        .init(name: "Tuition Fee", category: Category.education, date: getDateFromStr("25.08.23"), amount: 1496),
         .init(name: "MacBook Air", category: Category.education, date: Date(), amount: 99999)
     ]
 }

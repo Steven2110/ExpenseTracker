@@ -9,7 +9,30 @@ import SwiftUI
 
 struct MainView: View {
     var expenses: [Expense]
-    
+    @State private var filter: Category = Category.all
+    @State private var sortAmount: SortType = .none
+    @State private var sortDate: SortType = .descending
+    var sortAmountText: String {
+        switch sortAmount {
+        case .ascending:
+            return "Amount ▲"
+        case .descending:
+            return "Amount ▼"
+        case .none:
+            return "Amount ━"
+        }
+    }
+    var sortDateText: String {
+        switch sortDate {
+        case .ascending:
+            return "Date ▲"
+        case .descending:
+            return "Date ▼"
+        case .none:
+            return "Date ━"
+        }
+    }
+    @State private var sortedExpenses: [Expense] = []
     @State private var offsetY: CGFloat = 0
     var body: some View {
         GeometryReader { geo in
@@ -19,7 +42,7 @@ struct MainView: View {
                 VStack {
                     HeaderView(size: size, safeArea: safeArea)
                         .zIndex(1)
-                    ForEach(expenses) { expense in
+                    ForEach(sortedExpenses) { expense in
                         ExpenseRowView(expense: expense)
                     }.padding(.horizontal)
                 }
@@ -30,6 +53,8 @@ struct MainView: View {
 
                 }
             }.ignoresSafeArea(edges: .top)
+        }.onAppear {
+            sortedExpenses = sortedFilteredExpenses()
         }
     }
 }
@@ -91,34 +116,140 @@ extension MainView {
                 .offset(y: -offsetY)
                 ZStack {
                     Rectangle().fill(Color.brandBackground)
-                    HStack(spacing: 20) {
-                        Text("Amount ▲")
-                            .padding()
-                            .overlay {
-                                Capsule(style: .continuous)
-                                    .stroke(Color.primaryAccent, lineWidth: 2)
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 20) {
+                            Text(sortAmountText)
+                                .frame(height: 50)
+                                .padding(.horizontal)
+                                .overlay {
+                                    Capsule(style: .continuous)
+                                        .stroke(Color.primaryAccent, lineWidth: 2)
+                                }
+                                .padding(3)
+                                .onTapGesture {
+                                    if sortAmount == .ascending {
+                                        sortAmount = .descending
+                                    } else if sortAmount == .descending {
+                                        sortAmount = .none
+                                    } else if sortAmount == .none {
+                                        sortAmount = .ascending
+                                    }
+                                    sortedExpenses = sortedFilteredExpenses()
+                                }
+                            Text(sortDateText)
+                                .frame(height: 50)
+                                .padding(.horizontal)
+                                .overlay {
+                                    Capsule(style: .continuous)
+                                        .stroke(Color.primaryAccent, lineWidth: 2)
+                                }
+                                .padding(3)
+                                .onTapGesture {
+                                    if sortDate == .ascending {
+                                        sortDate = .descending
+                                    } else if sortDate == .descending {
+                                        sortDate = .none
+                                    } else if sortDate == .none {
+                                        sortDate = .ascending
+                                    }
+                                    sortedExpenses = sortedFilteredExpenses()
+                                }
+                            Picker("", selection: $filter) {
+                                ForEach(Category.categoriesFilter) { category in
+                                    Text(category.categoryName).tag(category)
+                                }
                             }
-                            .padding(3)
-                        Text("Date ▼")
-                            .padding()
-                            .overlay {
-                                Capsule(style: .continuous)
-                                    .stroke(Color.primaryAccent, lineWidth: 2)
-                            }
-                            .padding(3)
-                        Text("All")
-                            .padding()
+                            .tint(.black)
+                            .pickerStyle(.menu)
+                            .frame(height: 50)
                             .padding(.horizontal)
                             .overlay {
                                 Capsule(style: .continuous)
                                     .stroke(Color.primaryAccent, lineWidth: 2)
                             }
                             .padding(3)
-                    }.padding(.horizontal)
+                            .onChange(of: filter) { _ in
+                                sortedExpenses = sortedFilteredExpenses()
+                            }
+                        }.padding(.horizontal)
+                    }
                 }
                 .frame(height: 75)
                 .offset(y: -offsetY)
             }
         }.frame(height: headerHeight)
+    }
+    
+    enum SortType {
+        case ascending, descending, none
+    }
+    
+    func sortedFilteredExpenses() -> [Expense] {
+        let sortedExpenses = getSortedExpenses()
+        
+        if filter.categoryName == "All" {
+            return sortedExpenses
+        } else {
+            return sortedExpenses.filter({ $0.category.categoryName == filter.categoryName })
+        }
+    }
+    
+    func getSortedExpenses() -> [Expense] {
+        if sortDate == .ascending && sortAmount == .ascending {
+            // -MARK: Date ascending, Amount ascending
+            return expenses.sorted { expense1, expense2 in
+                if expense1.date == expense2.date {
+                    return expense1.amount < expense2.amount
+                }
+                return expense1.date < expense2.date
+            }
+        } else if sortDate == .ascending && sortAmount == .descending {
+            // -MARK: Date ascending, Amount descending
+            return expenses.sorted { expense1, expense2 in
+                if expense1.date == expense2.date {
+                    return expense1.amount > expense2.amount
+                }
+                return expense1.date < expense2.date
+            }
+        } else if sortDate == .ascending && sortAmount == .none {
+            // -MARK: Date ascending, Amount none
+            return expenses.sorted { expense1, expense2 in
+                return expense1.date < expense2.date
+            }
+        } else if sortDate == .descending && sortAmount == .ascending {
+            // -MARK: Date descending, Amount ascending
+            return expenses.sorted { expense1, expense2 in
+                if expense1.date == expense2.date {
+                    return expense1.amount < expense2.amount
+                }
+                return expense1.date > expense2.date
+            }
+        } else if sortDate == .descending && sortAmount == .descending {
+            // -MARK: Date descending, Amount descending
+            return expenses.sorted { expense1, expense2 in
+                if expense1.date == expense2.date {
+                    return expense1.amount > expense2.amount
+                }
+                return expense1.date > expense2.date
+            }
+        } else if sortDate == .descending && sortAmount == .none {
+            // -MARK: Date descending, Amount none
+            return expenses.sorted { expense1, expense2 in
+                return expense1.date > expense2.date
+            }
+        } else if sortDate == .none && sortAmount == .ascending {
+            // -MARK: Date none, Amount ascending
+            return expenses.sorted { expense1, expense2 in
+                return expense1.amount < expense2.amount
+            }
+        } else if sortDate == .none && sortAmount == .descending {
+            // -MARK: Date none, Amount descending
+            return expenses.sorted { expense1, expense2 in
+                return expense1.amount > expense2.amount
+            }
+        } else {
+            // -MARK: Date none, Amount none
+            return expenses
+        }
     }
 }
