@@ -19,6 +19,7 @@ struct Expense: Identifiable {
         .init(name: "Internet", category: Category.internet, date: Date(), amount: 70.0),
         .init(name: "Apple Developer Program", category: Category.development, date: Date(), amount: 99.00),
         .init(name: "Apple Music Subscription", category: Category.entertainment, date: Date(), amount: 35.0),
-        .init(name: "Tuition Fee", category: Category.education, date: Date(), amount: 1496)
+        .init(name: "Tuition Fee", category: Category.education, date: Date(), amount: 1496),
+        .init(name: "MacBook Air", category: Category.education, date: Date(), amount: 99999)
     ]
 }
