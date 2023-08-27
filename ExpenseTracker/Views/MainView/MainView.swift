@@ -76,6 +76,14 @@ struct MainView: View {
                                 editingExpense = selectedExpense
                             }
                         }
+                        ToolbarItem(placement: .cancellationAction) {
+                            Button {
+                                expenses.removeAll(where: { $0.id == selectedExpense.id })
+                                isShowingDetailView = false
+                            } label: {
+                                Label("Delete", systemImage: "trash")
+                            }
+                        }
                     }
                     .sheet(isPresented: $isShowingEditView) {
                         NavigationStack {
@@ -86,7 +94,10 @@ struct MainView: View {
                         }
                     }
                     .onDisappear {
-                        let index = expenses.firstIndex(where: { $0.id == selectedExpense.id })!
+                        guard let index = expenses.firstIndex(where: { $0.id == selectedExpense.id }) else {
+                            sortedExpenses = getSortedExpenses()
+                            return
+                        }
                         expenses[index] = selectedExpense
                         sortedExpenses = getSortedExpenses()
                     }
