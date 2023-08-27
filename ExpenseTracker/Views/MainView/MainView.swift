@@ -34,6 +34,9 @@ struct MainView: View {
     }
     @State private var sortedExpenses: [Expense] = []
     @State private var offsetY: CGFloat = 0
+    
+    @State private var isShowingDetailView: Bool = false
+    @State private var selectedExpense: Expense = Expense.sampleData[0]
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
@@ -44,6 +47,10 @@ struct MainView: View {
                         .zIndex(1)
                     ForEach(sortedExpenses) { expense in
                         ExpenseRowView(expense: expense)
+                            .onTapGesture {
+                                selectedExpense = expense
+                                isShowingDetailView = true
+                            }
                     }.padding(.horizontal)
                 }
                 .background {
@@ -53,8 +60,23 @@ struct MainView: View {
 
                 }
             }.ignoresSafeArea(edges: .top)
-        }.onAppear {
+        }
+        .onAppear {
             sortedExpenses = sortedFilteredExpenses()
+        }
+        .sheet(isPresented: $isShowingDetailView) {
+            NavigationStack {
+                ExpenseDetailView(expense: $selectedExpense)
+                    .toolbar {
+                        ToolbarItem {
+                            Button("Edit") {
+                                // Edit functionality with second sheet
+                            }
+                        }
+                    }
+            }
+            .presentationDetents([.fraction(0.5)])
+            .presentationDragIndicator(.visible)
         }
     }
 }

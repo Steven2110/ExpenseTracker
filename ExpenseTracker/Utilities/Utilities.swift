@@ -20,3 +20,10 @@ func getDateFromStr(_ dateStr: String) -> Date {
     
     return dateFormatter.date(from: dateStr)!
 }
+
+func getDateStr(_ date: Date) -> String {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = "dd MMMM yyyy, HH:mm"
+    
+    return dateFormatter.string(from: date)
+}
