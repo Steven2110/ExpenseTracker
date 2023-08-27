@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    var expenses: [Expense]
+    @Binding var expenses: [Expense]
     @State private var filter: Category = Category.all
     @State private var sortAmount: SortType = .none
     @State private var sortDate: SortType = .descending
@@ -36,7 +36,9 @@ struct MainView: View {
     @State private var offsetY: CGFloat = 0
     
     @State private var isShowingDetailView: Bool = false
+    @State private var isShowingEditView: Bool = false
     @State private var selectedExpense: Expense = Expense.sampleData[0]
+    @State private var editingExpense: Expense = Expense.emptyExpense
     var body: some View {
         GeometryReader { geo in
             let size = geo.size
@@ -70,9 +72,23 @@ struct MainView: View {
                     .toolbar {
                         ToolbarItem {
                             Button("Edit") {
-                                // Edit functionality with second sheet
+                                isShowingEditView = true
+                                editingExpense = selectedExpense
                             }
                         }
+                    }
+                    .sheet(isPresented: $isShowingEditView) {
+                        NavigationStack {
+                            ExpenseDetailEditView(expense: $editingExpense)
+                                .onDisappear {
+                                    selectedExpense = editingExpense
+                                }
+                        }
+                    }
+                    .onDisappear {
+                        let index = expenses.firstIndex(where: { $0.id == selectedExpense.id })!
+                        expenses[index] = selectedExpense
+                        sortedExpenses = getSortedExpenses()
                     }
             }
             .presentationDetents([.fraction(0.5)])
@@ -83,7 +99,7 @@ struct MainView: View {
 
 struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(expenses: Expense.sampleData)
+        MainView(expenses: .constant(Expense.sampleData))
     }
 }
 

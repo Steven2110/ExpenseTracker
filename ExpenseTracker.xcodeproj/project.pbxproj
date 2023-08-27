@@ -27,6 +27,7 @@
 		B05A83C82A9926D000CE5DCF /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83C72A9926D000CE5DCF /* Utilities.swift */; };
 		B05A83CD2A9A868600CE5DCF /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */; };
 		B05A83CF2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */; };
+		B0B4F1B02A9B71470052FD37 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		B05A83C72A9926D000CE5DCF /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 		B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailEditView.swift; sourceTree = "<group>"; };
+		B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		B05A83C92A99279800CE5DCF /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B0B4F1AE2A9B71330052FD37 /* CustomViews */,
 				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
 				B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */,
@@ -161,6 +164,14 @@
 				B05A83C32A991B0400CE5DCF /* CategoryView.swift */,
 			);
 			path = CategoryPicker;
+			sourceTree = "<group>";
+		};
+		B0B4F1AE2A9B71330052FD37 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +253,7 @@
 				B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */,
 				B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */,
 				B05A83B82A96EC9D00CE5DCF /* Double+Ext.swift in Sources */,
+				B0B4F1B02A9B71470052FD37 /* ClearableTextField.swift in Sources */,
 				B05A83BA2A96EE3300CE5DCF /* ETTabView.swift in Sources */,
 				B05A83BC2A96F2CD00CE5DCF /* AddExpenseForm.swift in Sources */,
 				B05A83C62A99269B00CE5DCF /* ExpenseRowView.swift in Sources */,

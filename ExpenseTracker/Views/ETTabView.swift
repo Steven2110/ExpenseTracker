@@ -12,7 +12,7 @@ struct ETTabView: View {
     var body: some View {
         TabView {
             Group {
-                MainView(expenses: expenses)
+                MainView(expenses: $expenses)
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }

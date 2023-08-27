@@ -14,6 +14,8 @@ struct Expense: Identifiable {
     var date: Date
     var amount: Double
     
+    static let emptyExpense: Expense = Expense(name: "", category: Category(categoryName: "", categoryIcon: ""), date: Date(), amount: 0.0)
+    
     static var sampleData: [Expense] = [
         .init(name: "Fly to Paris", category: Category.travel, date: getDateFromStr("12.08.23"), amount: 1300.00),
         .init(name: "Internet", category: Category.internet, date: getDateFromStr("14.08.23"), amount: 70.0),
