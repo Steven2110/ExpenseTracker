@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CategoriesView: View {
     var categories: [Category] = Category.defaultCategories
+    
+    @State private var showAddCategory: Bool = false
     var body: some View {
         NavigationStack {
             List {
@@ -34,10 +36,15 @@ struct CategoriesView: View {
                     Button {
                         // -TODO: Add CategoryManager to manage all categories list
                         // Add category functionality
+                        showAddCategory = true
                     } label: {
                         Image(systemName: "plus.circle.fill")
                     }
                 }
+            }
+            .sheet(isPresented: $showAddCategory) {
+                AddCategoryView()
+                    .presentationDetents([.fraction(0.6)])
             }
         }
     }
