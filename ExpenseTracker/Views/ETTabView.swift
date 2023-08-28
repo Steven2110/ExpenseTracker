@@ -16,6 +16,10 @@ struct ETTabView: View {
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
+                CategoriesView()
+                    .tabItem {
+                        Label("Categories", systemImage: "list.clipboard.fill")
+                    }
                 NavigationStack {
                     AddExpenseForm(expenses: $expenses)
                         .navigationTitle("Add New Expense")

@@ -28,6 +28,7 @@
 		B05A83CD2A9A868600CE5DCF /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */; };
 		B05A83CF2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */; };
 		B0B4F1B02A9B71470052FD37 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */; };
+		B0B4F1B22A9BA90E0052FD37 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 		B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailEditView.swift; sourceTree = "<group>"; };
 		B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
+		B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
 				B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */,
 				B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */,
+				B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */,
 				B05A83CB2A9927A600CE5DCF /* CategoryPicker */,
 				B05A83CA2A99279B00CE5DCF /* MainView */,
 			);
@@ -260,6 +263,7 @@
 				B05A83BE2A96FB5300CE5DCF /* Category.swift in Sources */,
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */,
+				B0B4F1B22A9BA90E0052FD37 /* CategoriesView.swift in Sources */,
 				B05A83CD2A9A868600CE5DCF /* ExpenseDetailView.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,
 				B05A83B62A96E0D900CE5DCF /* Expense.swift in Sources */,
