@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ExpenseTrackerApp: App {
+    let categoryManager: CategoryManager = CategoryManager()
     var body: some Scene {
         WindowGroup {
             ETTabView()
+                .environmentObject(categoryManager)
         }
     }
 }

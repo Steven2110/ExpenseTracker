@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct CategoriesView: View {
-    var categories: [Category] = Category.defaultCategories
+    @EnvironmentObject private var categoryManager: CategoryManager
     
     @State private var showAddCategory: Bool = false
     var body: some View {
         NavigationStack {
             List {
-                ForEach(categories) { category in
+                ForEach(categoryManager.categories) { category in
                     HStack {
                         Image(systemName: category.categoryIcon)
                             .resizable()
@@ -34,8 +34,6 @@ struct CategoriesView: View {
             .toolbar {
                 ToolbarItem {
                     Button {
-                        // -TODO: Add CategoryManager to manage all categories list
-                        // Add category functionality
                         showAddCategory = true
                     } label: {
                         Image(systemName: "plus.circle.fill")
@@ -53,5 +51,6 @@ struct CategoriesView: View {
 struct CategoriesView_Previews: PreviewProvider {
     static var previews: some View {
         CategoriesView()
+            .environmentObject(CategoryManager())
     }
 }

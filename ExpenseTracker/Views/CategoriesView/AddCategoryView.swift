@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct AddCategoryView: View {
+    @EnvironmentObject private var categoryManager: CategoryManager
+    @Environment(\.dismiss) private var dismiss
+    
     @State private var categoryName: String = ""
     @State private var categoryIcon: String = "house.fill"
     @State private var showIconPicker: Bool = false
@@ -30,7 +33,14 @@ struct AddCategoryView: View {
                 }
                 Section {
                     Button("Save") {
-                        
+                        guard checkValidity() else {
+                            // -TODO: Show alert
+                            print("Error")
+                            return
+                        }
+                        let newCategory = Category(categoryName: categoryName, categoryIcon: categoryIcon)
+                        categoryManager.addCategory(newCategory)
+                        dismiss()
                     }
                 }
             }
@@ -45,5 +55,12 @@ struct AddCategoryView: View {
 struct AddCategoryView_Previews: PreviewProvider {
     static var previews: some View {
         AddCategoryView()
+    }
+}
+
+extension AddCategoryView {
+    private func checkValidity() -> Bool {
+        guard !categoryName.isEmpty else { return false }
+        return true
     }
 }
