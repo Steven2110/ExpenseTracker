@@ -152,10 +152,9 @@
 				B0B4F1AE2A9B71330052FD37 /* CustomViews */,
 				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
-				B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */,
-				B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */,
-				B0B4F1B62A9C6E4A0052FD37 /* CategoriesView */,
+				B0B4F1B62A9C6E4A0052FD37 /* CategoriesViews */,
 				B05A83CB2A9927A600CE5DCF /* CategoryPicker */,
+				B0A2FAFB2A9E179700307705 /* ExpenseDetailViews */,
 				B05A83CA2A99279B00CE5DCF /* MainView */,
 			);
 			path = Views;
@@ -179,6 +178,15 @@
 			path = CategoryPicker;
 			sourceTree = "<group>";
 		};
+		B0A2FAFB2A9E179700307705 /* ExpenseDetailViews */ = {
+			isa = PBXGroup;
+			children = (
+				B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */,
+				B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */,
+			);
+			path = ExpenseDetailViews;
+			sourceTree = "<group>";
+		};
 		B0B4F1AE2A9B71330052FD37 /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
@@ -187,14 +195,14 @@
 			path = CustomViews;
 			sourceTree = "<group>";
 		};
-		B0B4F1B62A9C6E4A0052FD37 /* CategoriesView */ = {
+		B0B4F1B62A9C6E4A0052FD37 /* CategoriesViews */ = {
 			isa = PBXGroup;
 			children = (
 				B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */,
 				B0B4F1B72A9C6E630052FD37 /* AddCategoryView.swift */,
 				B0B4F1BB2A9CB3F10052FD37 /* CategoryIconPicker.swift */,
 			);
-			path = CategoriesView;
+			path = CategoriesViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
