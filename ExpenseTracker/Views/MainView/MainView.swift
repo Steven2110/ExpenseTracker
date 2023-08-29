@@ -47,13 +47,18 @@ struct MainView: View {
                 VStack {
                     HeaderView(size: size, safeArea: safeArea)
                         .zIndex(1)
-                    ForEach(sortedExpenses) { expense in
-                        ExpenseRowView(expense: expense)
-                            .onTapGesture {
-                                selectedExpense = expense
-                                isShowingDetailView = true
-                            }
-                    }.padding(.horizontal)
+                    if expenses.isEmpty {
+                        EmptyExpenseListView()
+                            .offset(y: size.height * 0.15)
+                    } else {
+                        ForEach(sortedExpenses) { expense in
+                            ExpenseRowView(expense: expense)
+                                .onTapGesture {
+                                    selectedExpense = expense
+                                    isShowingDetailView = true
+                                }
+                        }.padding(.horizontal)
+                    }
                 }
                 .background {
                     ScrollDetector { offset in
