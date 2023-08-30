@@ -22,8 +22,14 @@ extension Double {
         if let groupingSeparator = groupingSeparator {
             Formatter.number.groupingSeparator = groupingSeparator
         }
-        return Formatter.number.string(for: self) ?? ""
+        
+        if let formattedValue = Formatter.number.string(for: self) {
+            let currencyCode = locale.currencySymbol ?? ""
+            let currencyIndex = formattedValue.getIndex(of: currencyCode)
+            let currencyFormat = currencyIndex == 0 ? "\(currencyCode) " : "\(currencyCode)"
+            let formattedString = formattedValue.replacingOccurrences(of: currencyCode, with: currencyFormat)
+            return formattedString
+        }
+        return ""
     }
-    
-    var currency: String { formatted(style: .currency, locale: .englishUS) }
 }

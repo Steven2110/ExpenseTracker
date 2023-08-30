@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MainView: View {
+    @ObservedObject var userSettings = UserSettingsManager.shared
+    
     @Binding var expenses: [Expense]
     @State private var filter: Category = Category.all
     @State private var sortAmount: SortType = .none
@@ -69,7 +71,9 @@ struct MainView: View {
             }.ignoresSafeArea(edges: .top)
         }
         .onAppear {
-            sortedExpenses = sortedFilteredExpenses()
+            if sortedExpenses.count != expenses.count {
+                sortedExpenses = sortedFilteredExpenses()
+            }
         }
         .sheet(isPresented: $isShowingDetailView) {
             NavigationStack {
@@ -147,7 +151,7 @@ extension MainView {
                         GeometryReader { geo in
                             let rect = geo.frame(in: .global)
                             HStack {
-                                Text("\(expenses.map({ $0.amount }).reduce(0, +).currency)")
+                                Text("\(expenses.map({ $0.amount }).reduce(0, +).formatted(style: .currency, locale: Locale(identifier: userSettings.currencyStr)))")
                                     .minimumScaleFactor(0.92)
                                     .font(.largeTitle)
                                     .bold()
@@ -239,6 +243,7 @@ extension MainView {
     }
     
     func sortedFilteredExpenses() -> [Expense] {
+        print("called")
         let sortedExpenses = getSortedExpenses()
         
         if filter.categoryName == "All" {

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ExpenseDetailView: View {
+    @ObservedObject private var userSettings: UserSettingsManager = UserSettingsManager.shared
+    
     @Binding var expense: Expense
     var body: some View {
         ZStack {
@@ -25,7 +27,7 @@ struct ExpenseDetailView: View {
                     .clipShape(Circle())
                 Text(expense.name)
                     .font(.largeTitle)
-                Text("\(expense.amount.currency)").font(.largeTitle)
+                Text("\(expense.amount.formatted(style: .currency, locale: Locale(identifier: userSettings.currencyStr)))").font(.largeTitle)
                 Text(expense.category.categoryName).foregroundColor(.secondary)
                 Text(getDateStr(expense.date))
             }

@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct ExpenseRowView: View {
+    @ObservedObject var userSettings = UserSettingsManager.shared
     var expense: Expense
     var body: some View {
         ZStack {
@@ -31,7 +32,7 @@ struct ExpenseRowView: View {
                     Text(getDateFormatted(from: expense.date)).font(.caption)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                Text("\(expense.amount.currency)")
+                Text("\(expense.amount.formatted(style: .currency, locale: Locale(identifier: userSettings.currencyStr)))")
             }.padding(.horizontal, 10)
         }
     }

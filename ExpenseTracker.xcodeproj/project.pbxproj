@@ -28,6 +28,9 @@
 		B05A83CD2A9A868600CE5DCF /* ExpenseDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */; };
 		B05A83CF2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */; };
 		B0A2FAFD2A9E220B00307705 /* EmptyExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FAFC2A9E220B00307705 /* EmptyExpenseListView.swift */; };
+		B0A2FAFF2A9E5A4100307705 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FAFE2A9E5A4100307705 /* String+Ext.swift */; };
+		B0A2FB032A9E5D1200307705 /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB022A9E5D1200307705 /* UserSettingsManager.swift */; };
+		B0A2FB052A9E7E7200307705 /* ChangeCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */; };
 		B0B4F1B02A9B71470052FD37 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */; };
 		B0B4F1B22A9BA90E0052FD37 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */; };
 		B0B4F1B82A9C6E630052FD37 /* AddCategoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1B72A9C6E630052FD37 /* AddCategoryView.swift */; };
@@ -59,6 +62,9 @@
 		B05A83CC2A9A868600CE5DCF /* ExpenseDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailView.swift; sourceTree = "<group>"; };
 		B05A83CE2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDetailEditView.swift; sourceTree = "<group>"; };
 		B0A2FAFC2A9E220B00307705 /* EmptyExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExpenseListView.swift; sourceTree = "<group>"; };
+		B0A2FAFE2A9E5A4100307705 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
+		B0A2FB022A9E5D1200307705 /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
+		B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrency.swift; sourceTree = "<group>"; };
 		B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 		B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
 		B0B4F1B72A9C6E630052FD37 /* AddCategoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCategoryView.swift; sourceTree = "<group>"; };
@@ -123,6 +129,7 @@
 				B05A83AF2A96435E00CE5DCF /* Extension */,
 				B05A83B22A96C3EB00CE5DCF /* ScrollDetector.swift */,
 				B05A83C72A9926D000CE5DCF /* Utilities.swift */,
+				B0A2FB022A9E5D1200307705 /* UserSettingsManager.swift */,
 				B0B4F1BD2A9CC5590052FD37 /* CategoryManager.swift */,
 				B0B4F1B92A9C6EF50052FD37 /* Constant.swift */,
 			);
@@ -133,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				B05A83B02A96448100CE5DCF /* Color+Ext.swift */,
+				B0A2FAFE2A9E5A4100307705 /* String+Ext.swift */,
 				B05A83B72A96EC9D00CE5DCF /* Double+Ext.swift */,
 				B05A83BF2A99157900CE5DCF /* View+Ext.swift */,
 			);
@@ -153,6 +161,7 @@
 			children = (
 				B0B4F1AE2A9B71330052FD37 /* CustomViews */,
 				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
+				B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */,
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
 				B0B4F1B62A9C6E4A0052FD37 /* CategoriesViews */,
 				B05A83CB2A9927A600CE5DCF /* CategoryPicker */,
@@ -286,6 +295,8 @@
 				B05A83CF2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift in Sources */,
 				B0A2FAFD2A9E220B00307705 /* EmptyExpenseListView.swift in Sources */,
 				B05A83C82A9926D000CE5DCF /* Utilities.swift in Sources */,
+				B0A2FB052A9E7E7200307705 /* ChangeCurrency.swift in Sources */,
+				B0A2FAFF2A9E5A4100307705 /* String+Ext.swift in Sources */,
 				B0B4F1BE2A9CC5590052FD37 /* CategoryManager.swift in Sources */,
 				B05A83C42A991B0400CE5DCF /* CategoryView.swift in Sources */,
 				B05A83C02A99157900CE5DCF /* View+Ext.swift in Sources */,
@@ -298,6 +309,7 @@
 				B05A839D2A960BEF00CE5DCF /* ExpenseTrackerApp.swift in Sources */,
 				B0B4F1BA2A9C6EF50052FD37 /* Constant.swift in Sources */,
 				B05A83C22A991AA700CE5DCF /* CategoryPicker.swift in Sources */,
+				B0A2FB032A9E5D1200307705 /* UserSettingsManager.swift in Sources */,
 				B0B4F1B22A9BA90E0052FD37 /* CategoriesView.swift in Sources */,
 				B05A83CD2A9A868600CE5DCF /* ExpenseDetailView.swift in Sources */,
 				B05A83B12A96448100CE5DCF /* Color+Ext.swift in Sources */,
