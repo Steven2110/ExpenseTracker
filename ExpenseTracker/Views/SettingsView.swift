@@ -20,6 +20,7 @@ struct SettingsView: View {
                             .tag(currency)
                     }
                 }.pickerStyle(.navigationLink)
+                Toggle("Dark Mode", isOn: $userSettings.isDarkMode.animation(.easeInOut))
             }
             .navigationTitle("Setting")
         }

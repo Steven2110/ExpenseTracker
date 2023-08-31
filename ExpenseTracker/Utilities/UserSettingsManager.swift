@@ -9,6 +9,7 @@ import SwiftUI
 
 class UserSettingsManager: ObservableObject {
     @AppStorage("currency") var currencyStr = "en_US"
+    @AppStorage("isDarkMode") var isDarkMode = false
     var currency: Currency {
         get {
             Currency.currencies.first(where: { $0.currencyLocaleStr == currencyStr }) ?? Currency.currencies[0]
