@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct AddExpenseForm: View {
+    @Environment(\.dismiss) private var dismiss
+    
+    @ObservedObject private var userSettings: UserSettingsManager = UserSettingsManager.shared
+    
     @Binding var expenses: [Expense]
     
     @State private var name: String = ""
@@ -30,7 +34,7 @@ struct AddExpenseForm: View {
                         .multilineTextAlignment(.trailing)
                         .keyboardType(.decimalPad)
                 } label: {
-                    Text("Expense amount ($)")
+                    Text("Expense amount (\(Locale(identifier: userSettings.currencyStr).currencySymbol ?? ""))")
                 }
                 VStack {
                     Text("Transaction date").frame(maxWidth: .infinity, alignment: .leading)
@@ -57,6 +61,8 @@ struct AddExpenseForm: View {
                         let expense = Expense(name: name, category: category, date: transactionDate, amount: amount)
                         
                         expenses.append(expense)
+                        
+                        dismiss()
                     }
                 }
             }
