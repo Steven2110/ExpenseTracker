@@ -9,31 +9,48 @@ import SwiftUI
 
 struct ETTabView: View {
     @State private var expenses: [Expense] = Expense.sampleData
+    
+    @State private var selectedItem = 1
+    @State private var previousSelectedItem = 1
+    @State private var isPresentingAddSheet = false
+    
     var body: some View {
-        TabView {
+        TabView(selection: $selectedItem) {
             Group {
                 MainView(expenses: $expenses)
                     .tabItem {
                         Label("Home", systemImage: "house")
                     }
+                    .tag(1)
                 CategoriesView()
                     .tabItem {
                         Label("Categories", systemImage: "list.clipboard.fill")
                     }
-                NavigationStack {
-                    AddExpenseForm(expenses: $expenses)
-                        .navigationTitle("Add New Expense")
-                }
-                .tabItem {
-                    Label("Add Expense", systemImage: "plus.circle")
-                }
+                    .tag(2)
+                Text("Add Expense Sheet")
+                    .tabItem {
+                        Label("Add Expense", systemImage: "plus.circle")
+                    }
+                    .tag(3)
                 SettingsView()
                     .tabItem {
                         Label("Settings", systemImage: "gear")
                     }
             }
             .toolbar(.visible, for: .tabBar)
-        }.tint(.primaryAccent)
+        }
+        .tint(.primaryAccent)
+        .onChange(of: selectedItem) { newValue in
+            if newValue == 3 {
+                isPresentingAddSheet = true
+                selectedItem = previousSelectedItem
+            } else {
+                previousSelectedItem = newValue
+            }
+        }
+        .sheet(isPresented: $isPresentingAddSheet) {
+            AddExpenseForm(expenses: $expenses)
+        }
     }
 }
 
