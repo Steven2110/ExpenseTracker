@@ -71,9 +71,13 @@ struct MainView: View {
             }.ignoresSafeArea(edges: .top)
         }
         .onAppear {
+            print("Appear")
             if sortedExpenses.count != expenses.count {
                 sortedExpenses = sortedFilteredExpenses()
             }
+        }
+        .onChange(of: expenses) { _ in
+            sortedExpenses = sortedFilteredExpenses()
         }
         .sheet(isPresented: $isShowingDetailView) {
             NavigationStack {
