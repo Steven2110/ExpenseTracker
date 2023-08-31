@@ -16,7 +16,7 @@ extension Locale {
 }
 
 extension Double {
-    func formatted(with groupingSeparator: String? = nil, style: NumberFormatter.Style, locale: Locale = .current) -> String {
+    func currencyFormatted(with groupingSeparator: String? = nil, style: NumberFormatter.Style = .currency, locale: Locale = Locale(identifier: UserSettingsManager.shared.currencyStr)) -> String {
         Formatter.number.locale = locale
         Formatter.number.numberStyle = style
         if let groupingSeparator = groupingSeparator {

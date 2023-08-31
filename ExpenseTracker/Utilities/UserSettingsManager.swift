@@ -8,7 +8,7 @@
 import SwiftUI
 
 class UserSettingsManager: ObservableObject {
-    @AppStorage("currency") var currencyStr: String = Locale.current.identifier
+    @AppStorage("currency") var currencyStr: String = "en_US"
     
     static let shared: UserSettingsManager = UserSettingsManager()
     

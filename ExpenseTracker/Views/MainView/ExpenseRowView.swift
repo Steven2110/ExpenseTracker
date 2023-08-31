@@ -32,7 +32,7 @@ struct ExpenseRowView: View {
                     Text(getDateFormatted(from: expense.date)).font(.caption)
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                Text("\(expense.amount.formatted(style: .currency, locale: Locale(identifier: userSettings.currencyStr)))")
+                Text("\(expense.amount.currencyFormatted())")
             }.padding(.horizontal, 10)
         }
     }

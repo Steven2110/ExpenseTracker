@@ -151,7 +151,7 @@ extension MainView {
                         GeometryReader { geo in
                             let rect = geo.frame(in: .global)
                             HStack {
-                                Text("\(expenses.map({ $0.amount }).reduce(0, +).formatted(style: .currency, locale: Locale(identifier: userSettings.currencyStr)))")
+                                Text("\(expenses.map({ $0.amount }).reduce(0, +).currencyFormatted())")
                                     .minimumScaleFactor(0.92)
                                     .font(.largeTitle)
                                     .bold()
