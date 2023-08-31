@@ -27,9 +27,9 @@ struct ETTabView: View {
                 .tabItem {
                     Label("Add Expense", systemImage: "plus.circle")
                 }
-                ChangeCurrency()
+                SettingsView()
                     .tabItem {
-                        Label("Change Currency", systemImage: "dollarsign.arrow.circlepath")
+                        Label("Settings", systemImage: "gear")
                     }
             }
             .toolbar(.visible, for: .tabBar)

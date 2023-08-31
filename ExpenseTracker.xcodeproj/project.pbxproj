@@ -30,7 +30,7 @@
 		B0A2FAFD2A9E220B00307705 /* EmptyExpenseListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FAFC2A9E220B00307705 /* EmptyExpenseListView.swift */; };
 		B0A2FAFF2A9E5A4100307705 /* String+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FAFE2A9E5A4100307705 /* String+Ext.swift */; };
 		B0A2FB032A9E5D1200307705 /* UserSettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB022A9E5D1200307705 /* UserSettingsManager.swift */; };
-		B0A2FB052A9E7E7200307705 /* ChangeCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */; };
+		B0A2FB052A9E7E7200307705 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB042A9E7E7200307705 /* SettingsView.swift */; };
 		B0A2FB292AA0C5DF00307705 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0A2FB282AA0C5DF00307705 /* Currency.swift */; };
 		B0B4F1B02A9B71470052FD37 /* ClearableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */; };
 		B0B4F1B22A9BA90E0052FD37 /* CategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */; };
@@ -65,7 +65,7 @@
 		B0A2FAFC2A9E220B00307705 /* EmptyExpenseListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyExpenseListView.swift; sourceTree = "<group>"; };
 		B0A2FAFE2A9E5A4100307705 /* String+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ext.swift"; sourceTree = "<group>"; };
 		B0A2FB022A9E5D1200307705 /* UserSettingsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettingsManager.swift; sourceTree = "<group>"; };
-		B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeCurrency.swift; sourceTree = "<group>"; };
+		B0A2FB042A9E7E7200307705 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B0A2FB282AA0C5DF00307705 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
 		B0B4F1AF2A9B71470052FD37 /* ClearableTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClearableTextField.swift; sourceTree = "<group>"; };
 		B0B4F1B12A9BA90E0052FD37 /* CategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesView.swift; sourceTree = "<group>"; };
@@ -164,7 +164,7 @@
 			children = (
 				B0B4F1AE2A9B71330052FD37 /* CustomViews */,
 				B05A83B92A96EE3300CE5DCF /* ETTabView.swift */,
-				B0A2FB042A9E7E7200307705 /* ChangeCurrency.swift */,
+				B0A2FB042A9E7E7200307705 /* SettingsView.swift */,
 				B05A83BB2A96F2CD00CE5DCF /* AddExpenseForm.swift */,
 				B0B4F1B62A9C6E4A0052FD37 /* CategoriesViews */,
 				B05A83CB2A9927A600CE5DCF /* CategoryPicker */,
@@ -298,7 +298,7 @@
 				B05A83CF2A9A90EC00CE5DCF /* ExpenseDetailEditView.swift in Sources */,
 				B0A2FAFD2A9E220B00307705 /* EmptyExpenseListView.swift in Sources */,
 				B05A83C82A9926D000CE5DCF /* Utilities.swift in Sources */,
-				B0A2FB052A9E7E7200307705 /* ChangeCurrency.swift in Sources */,
+				B0A2FB052A9E7E7200307705 /* SettingsView.swift in Sources */,
 				B0A2FAFF2A9E5A4100307705 /* String+Ext.swift in Sources */,
 				B0B4F1BE2A9CC5590052FD37 /* CategoryManager.swift in Sources */,
 				B0A2FB292AA0C5DF00307705 /* Currency.swift in Sources */,
