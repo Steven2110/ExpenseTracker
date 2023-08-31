@@ -176,42 +176,10 @@ extension MainView {
                     Rectangle().fill(Color.brandBackground)
                     ScrollView(.horizontal, showsIndicators: false) {
                         HStack(spacing: 20) {
-                            Text(sortAmountText)
-                                .frame(height: 50)
-                                .padding(.horizontal)
-                                .overlay {
-                                    Capsule(style: .continuous)
-                                        .stroke(Color.primaryAccent, lineWidth: 2)
-                                }
-                                .padding(3)
-                                .onTapGesture {
-                                    if sortAmount == .ascending {
-                                        sortAmount = .descending
-                                    } else if sortAmount == .descending {
-                                        sortAmount = .none
-                                    } else if sortAmount == .none {
-                                        sortAmount = .ascending
-                                    }
-                                    sortedExpenses = sortedFilteredExpenses()
-                                }
-                            Text(sortDateText)
-                                .frame(height: 50)
-                                .padding(.horizontal)
-                                .overlay {
-                                    Capsule(style: .continuous)
-                                        .stroke(Color.primaryAccent, lineWidth: 2)
-                                }
-                                .padding(3)
-                                .onTapGesture {
-                                    if sortDate == .ascending {
-                                        sortDate = .descending
-                                    } else if sortDate == .descending {
-                                        sortDate = .none
-                                    } else if sortDate == .none {
-                                        sortDate = .ascending
-                                    }
-                                    sortedExpenses = sortedFilteredExpenses()
-                                }
+                            amountSortCapsule
+                                .onTapGesture { amountSortAction() }
+                            dateSortCapsule
+                                .onTapGesture { dateSortAction() }
                             Picker("", selection: $filter) {
                                 ForEach(Category.categoriesFilter) { category in
                                     Text(category.categoryName).tag(category)
@@ -236,6 +204,50 @@ extension MainView {
                 .offset(y: -offsetY)
             }
         }.frame(height: headerHeight)
+    }
+    
+    private var amountSortCapsule: some View {
+        Text(sortAmountText)
+            .frame(height: 50)
+            .padding(.horizontal)
+            .overlay {
+                Capsule(style: .continuous)
+                    .stroke(Color.primaryAccent, lineWidth: 2)
+            }
+            .padding(3)
+    }
+    
+    private var dateSortCapsule: some View {
+        Text(sortDateText)
+            .frame(height: 50)
+            .padding(.horizontal)
+            .overlay {
+                Capsule(style: .continuous)
+                    .stroke(Color.primaryAccent, lineWidth: 2)
+            }
+            .padding(3)
+    }
+    
+    private func amountSortAction() {
+        if sortAmount == .ascending {
+            sortAmount = .descending
+        } else if sortAmount == .descending {
+            sortAmount = .none
+        } else if sortAmount == .none {
+            sortAmount = .ascending
+        }
+        sortedExpenses = sortedFilteredExpenses()
+    }
+    
+    private func dateSortAction() {
+        if sortDate == .ascending {
+            sortDate = .descending
+        } else if sortDate == .descending {
+            sortDate = .none
+        } else if sortDate == .none {
+            sortDate = .ascending
+        }
+        sortedExpenses = sortedFilteredExpenses()
     }
     
     enum SortType {
