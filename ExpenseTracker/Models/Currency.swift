@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Currency: Identifiable {
+struct Currency: Identifiable, Hashable {
     let id: UUID = UUID()
     let currencyName: String
     let currencyLocaleStr: String
